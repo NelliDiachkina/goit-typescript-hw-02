@@ -13,11 +13,9 @@
 - обробників подій,
 - HTTP-функцій, будь-яких інших функцій.
 
-![1](https://github.com/NelliDiachkina/goit-react-hw-04/assets/99911692/67203737-c86a-4143-ab38-51d98ece8303)
-
-![2](https://github.com/NelliDiachkina/goit-react-hw-04/assets/99911692/6d0a532e-2aa1-468a-bbf8-6b169a2695bf)
-
-![3](https://github.com/NelliDiachkina/goit-react-hw-04/assets/99911692/c13e80ee-2e5f-4b18-9245-ca3d497fe11e)
+![1](https://github.com/NelliDiachkina/goit-typescript-hw-02/assets/99911692/aee72c29-789b-42fc-bb5a-46d973e97474)
+![2](https://github.com/NelliDiachkina/goit-typescript-hw-02/assets/99911692/118a6200-2b35-4628-9466-597c359e1093)
+![3](https://github.com/NelliDiachkina/goit-typescript-hw-02/assets/99911692/d9857c52-7fb9-4f7c-b712-5da14f09d8cd)
 
 Впевнися, що коректно типізуєш всі об'єкти, масиви, функції та інші частини
 свого коду. Не забувай про типи даних для HTTP-запитів, об'єктів стану та
