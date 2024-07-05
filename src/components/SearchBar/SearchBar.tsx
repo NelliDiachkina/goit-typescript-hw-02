@@ -8,7 +8,7 @@ const notify = () => toast('Please enter a search term!');
 const toastOptions = {
   duration: 2500,
   style: {
-    background: '#adff2f',
+    background: '#ffc12f',
     color: 'black',
   },
 };

@@ -6,9 +6,9 @@
   font-weight: 400;
   padding: 1rem;
   background-color: #242424;
-  color: #adff2f;
+  color: #ffc12f;
 
-  --shadow: 0 0 7px #adff2f;
+  --shadow: 0 0 7px #ffc12f;
   --animation: 0.6s ease-in-out;
 }
 
@@ -44,5 +44,5 @@ input {
 }
 
 input::placeholder {
-  color: #acff2f70;
+  color: #ffc12f6b;
 }

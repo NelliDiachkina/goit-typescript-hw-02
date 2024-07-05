@@ -5,7 +5,7 @@ const Loader = () => {
     <Hearts
       height="80"
       width="80"
-      color="#adff2f"
+      color="#ffc12f"
       ariaLabel="hearts-loading"
       wrapperStyle={{
         justifyContent: 'center',
