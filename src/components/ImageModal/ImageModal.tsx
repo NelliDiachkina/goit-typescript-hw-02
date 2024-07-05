@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import css from './ImageModal.module.css';
+import { ImageModalProps } from './ImageModal.types';
 
 Modal.setAppElement('#root');
 
@@ -20,7 +21,12 @@ const customStyles = {
   },
 };
 
-const ImageModal = ({ bigUrl, description, isOpen, onClose }) => {
+const ImageModal = ({
+  bigUrl,
+  description,
+  isOpen,
+  onClose,
+}: ImageModalProps) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -30,7 +36,7 @@ const ImageModal = ({ bigUrl, description, isOpen, onClose }) => {
       bodyOpenClassName={css.modalOpen}
       style={customStyles}
     >
-      <img src={bigUrl} alt={description} className={css.img} />
+      <img src={bigUrl} alt={description || undefined} className={css.img} />
     </Modal>
   );
 };

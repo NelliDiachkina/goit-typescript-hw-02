@@ -10,19 +10,21 @@ import ImageGallery from '../ImageGallery/ImageGallery';
 import ImageModal from '../ImageModal/ImageModal';
 
 import css from './App.module.css';
+import { UnsplashPhoto } from '../../api/unsplash-api.types';
+import { ModalInfo } from './App.types';
 
 const App = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [page, setPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(false);
-  const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorText, setErrorText] = useState('');
-  const [selectedImg, setSelectedImg] = useState('');
-  const [description, setDescription] = useState('');
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const contentRef = useRef();
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [page, setPage] = useState<number>(1);
+  const [totalPage, setTotalPage] = useState<boolean>(false);
+  const [images, setImages] = useState<UnsplashPhoto[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [errorText, setErrorText] = useState<string>('');
+  const [selectedImg, setSelectedImg] = useState<string>('');
+  const [description, setDescription] = useState<string | null>('');
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!searchQuery) {
@@ -50,30 +52,30 @@ const App = () => {
   }, [searchQuery, page]);
 
   useEffect(() => {
-    if (page === 1) {
+    if (page === 1 || !contentRef.current) {
       return;
     }
 
     contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [page, images]);
 
-  const handleSearch = newQuery => {
+  const handleSearch = (newQuery: string) => {
     setSearchQuery(newQuery);
     setPage(1);
     setImages([]);
   };
 
-  const handleMore = () => {
+  const handleMore: () => void = () => {
     setPage(page + 1);
   };
 
-  const handleModalOpen = ({ bigUrl, description }) => {
+  const handleModalOpen = ({ bigUrl, description }: ModalInfo) => {
     setSelectedImg(bigUrl);
     setDescription(description);
     setModalIsOpen(true);
   };
 
-  const handleModalClose = () => {
+  const handleModalClose: () => void = () => {
     setSelectedImg('');
     setDescription('');
     setModalIsOpen(false);
